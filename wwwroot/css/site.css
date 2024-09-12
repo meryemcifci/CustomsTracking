@@ -1,0 +1,24 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: #222D56;
+    color: white;
+}

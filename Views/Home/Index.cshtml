@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <form method="get" asp-action="Index">
+
+        <input type="text" name="xrayFilter" placeholder="X-Ray Nedeni" />
+        <input type="text" name="driverNameFilter" placeholder="Şoför İsmi" />
+        <input type="datetime" name="TransactionFilter" placeholder="İşlem Tarihi" />
+        <input type="text" name="VehicleTypeFilter" placeholder="Araç Türü" />
+
+        <input type="submit" value="Filter" />
+    </form>
+</div>

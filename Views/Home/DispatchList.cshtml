@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EntityLayer.DispatchPage>
+@{
+    ViewData["Title"] = "DispatchList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="m-5">
+
+    <div class="bg-success text-white p-4">Sevk yapan araçların listesi</div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped m-5">
+            <thead>
+                <tr>
+                    <th>Plaka Bilgisi</th>
+                    <th>X-Ray Bilgisi</th>
+                    <th>Sevk Nedeni</th>
+                    <th>İşlem Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Plate</td>
+                        <td>@item.XrayStatus</td>
+                        <td>@item.DispatchReasonId</td>
+                        <td>@item.TransactionDate</td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

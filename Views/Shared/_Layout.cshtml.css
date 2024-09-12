@@ -1,0 +1,35 @@
+﻿.navbar-custom {
+    background-color: #222d56;
+    padding: 15px;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+.text-dark{
+    color:fff;
+}
+.nav-link {
+    color: azure;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 10px;
+}
+
+.footer {
+    background-color: #222d56;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}

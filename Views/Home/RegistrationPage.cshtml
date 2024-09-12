@@ -1,0 +1,183 @@
+﻿@model EntityLayer.RegistrationPage
+@{
+    ViewData["Title"] = "RegistrationPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="form-container">
+    <div class="form-header">
+        Araç Tescili Yap
+    </div>
+
+    <form asp-action="RegistrationPage" method="post">
+        <div class="form-group">
+            <label>Plaka:</label>
+            <input class="form-control" asp-for="Plate" />
+        </div>
+
+        <div class="form-group">
+            <label>Şoför Adı:</label>
+            <input class="form-control" asp-for="DriverName" />
+        </div>
+
+        <div class="form-group">
+            <label>Şoför Soyadı:</label>
+            <input class="form-control" asp-for="DriverSurname" />
+        </div>
+
+        <div class="form-group">
+            <label>Şoför Baba Adı:</label>
+            <input class="form-control" asp-for="DriverFatherName" />
+        </div>
+
+        <div class="form-group">
+            <label>TC Kimlik No:</label>
+            <input class="form-control" asp-for="NationalId" />
+        </div>
+
+        <div class="form-group">
+            <label>Pasaport No:</label>
+            <input class="form-control" asp-for="Passport" />
+        </div>
+
+        <div class="form-group">
+            <label>Araba Türü:</label>
+            <select asp-for="VehicleTypeId" class="form-control" asp-items="ViewBag.VehicleTypes">
+                <option value="">-- Seçiniz --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Araba Marka:</label>
+            <select asp-for="VehicleBrandId" class="form-control" asp-items="ViewBag.VehicleBrands">
+                <option value="">-- Seçiniz --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Araba Model:</label>
+            <select asp-for="VehicleModelId" class="form-control" asp-items="ViewBag.VehicleModels">
+                <option value="">-- Seçiniz --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Yük Durumu:</label>
+            <input type="checkbox" asp-for="LoadPosition" id="loadPositionCheckbox" />
+        </div>
+
+        <div class="form-group" id="loadStatusDiv">
+            <label>Yük Bilgisi:</label>
+            <input class="form-control" asp-for="LoadStatus" />
+        </div>
+
+        <script>
+            document.getElementById('loadPositionCheckbox').addEventListener('change', function () {
+                var loadStatusDiv = document.getElementById('loadStatusDiv');
+                if (!this.checked) {
+                    loadStatusDiv.style.display = 'none';
+                } else {
+                    loadStatusDiv.style.display = 'block';
+                }
+            });
+
+            window.onload = function () {
+                var loadStatusDiv = document.getElementById('loadStatusDiv');
+                var checkbox = document.getElementById('loadPositionCheckbox');
+                if (!checkbox.checked) {
+                    loadStatusDiv.style.display = 'none';
+                }
+            };
+        </script>
+
+        <div class="form-group">
+            <label>İşlem Tarihi:</label>
+            <input class="form-control" asp-for="TransactionDate" />
+        </div>
+
+        <button type="submit" class="submit-button">Gönder</button>
+    </form>
+
+    <div>
+        <a asp-action="RegistrationList" class="btn btn-primary">Tescil Yapan Araçları Listele</a>
+    </div>
+</div>
+
+<style>
+
+    .form-container {
+        max-width: 600px;
+        margin: 40px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px #222d56;
+        padding: 20px;
+    }
+
+    .form-header {
+        font-size: 24px;
+        color: #222d56; 
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        color: #222d56; 
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #222d56; 
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+    }
+
+    .submit-button {
+        background-color: #d5ab65; 
+        color: #222d56;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+        background-color: #b58e55; 
+    }
+
+    a.btn-primary {
+        background-color: #222d56;
+        color: #fff; 
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    a.btn-primary:hover {
+        background-color: #b58e55; 
+    }
+
+
+</style>
+

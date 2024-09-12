@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EntityLayer.LoginPage>
+@{
+    ViewData["Title"] = "LoginList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-5">
+
+    <div class="bg-success text-white p-4">Giriş yapan araçların listesi</div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped m-5">
+            <thead>
+                <tr>
+                    <th>Plaka Bilgisi</th>
+                    <th>Dorse Bilgisi</th>
+                    <th>Yön Bilgisi</th>
+                    <th>İşlem Tarihi</th> 
+                </tr>
+            </thead>
+          <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.Plate</td>
+                        <td>@item.TrailerPlate</td>
+                        <td>@item.DirectionId</td>
+                        <td>@item.TransactionDate</td>
+                    </tr>
+            
+                }
+
+          </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EntityLayer.RegistrationPage>
+@{
+    ViewData["Title"] = "RegistrationList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="m-5">
+
+    <div class="bg-success text-white p-4">Tescil yapan araçların listesi</div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped m-5">
+            <thead>
+                <tr>
+                    <th>Plaka Bilgisi</th>
+                    <th>Şoför Adı</th>
+                    <th>Şoför Soyadı</th>
+                    <th>Şoför Baba Adı</th>
+                    <th>TC Kimlik No</th>
+                    <th>Pasaport No</th>
+                    <th>Araba Türü</th>
+                    <th>Araba Marka</th>
+                    <th>Araba Model</th>
+                    <th>Yük Durumu</th>
+                    <th>Yük Bilgisi</th>
+                    <th>İşlem Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Plate</td>
+                        <td>@item.DriverName</td>
+                        <td>@item.DriverSurname</td>
+                        <td>@item.DriverFatherName</td>
+                        <td>@item.NationalId </td>
+                        <td>@item.Passport</td>
+                        <td>@item.VehicleTypeId</td>
+                        <td>@item.VehicleBrandId</td>
+                        <td>@item.VehicleModelId</td>
+                        <td>@item.LoadPosition </td>
+                        <td>@item.LoadStatus </td>
+                        <td>@item.TransactionDate</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+

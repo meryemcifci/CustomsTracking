@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+
+<div class="wrapper fadeInDown">
+    <h2> Memur Girişi</h2>
+    <form action="#" method="post">
+        <p>Kullanıcı Adınız</p>
+        <input type="text" id="Username" class="Username" name="Username" required="" />
+        <p>Şifre</p>
+        <input type="password" id="Password" class="Password" name="Password"  required=""/>
+        <input type="submit" id="Password" class="Login" name="Login" value="Giriş Yap" />
+    </form>
+
+
+    <div id="formFooter">
+        <a class="underlineHover" href="#">Paralomı Unuttum</a>
+        <a class="underlineHover" href="#">Hesabınız yok ise kaydolunuz!</a>
+    </div>
+
+</div>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f3f4f6;
+    }
+
+    .wrapper {
+        background-color: white;
+        border: 2px solid #222d56;
+        border-radius: 12px;
+        padding: 30px;
+        width: 320px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h2 {
+        color: #222d56;
+        font-size: 26px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    p {
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: #333;
+        text-align: left;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 14px;
+        transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #222d56;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        background-color: #222d56;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        width: 100%;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #1a1f42;
+    }
+
+    #formFooter {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .underlineHover {
+        color: #222d56;
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+        margin-top: 10px;
+        transition: color 0.3s;
+    }
+
+    .underlineHover:hover {
+        color: #1a1f42;
+        text-decoration: underline;
+    }
+
+</style>

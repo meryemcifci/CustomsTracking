@@ -1,0 +1,66 @@
+﻿@model EntityLayer.ExitPage
+@{
+    ViewData["Title"] = "Exit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="ExitPage" method="post" m-5 p-4>
+        <div class="form-group">
+            <label>Plaka:</label>
+            <input class="form-control" asp-for="Plate" />
+        </div>
+    
+    <button type="submit">Çıkış Yap</button>
+</form>
+
+
+
+<style>
+    form {
+        max-width: 400px;
+        margin: 40px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        border: 2px solid #222d56; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        color: #222d56; 
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #222d56; 
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+
+    button[type="submit"] {
+        background-color: #222d56; 
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #d5ab65;
+    }
+</style>
