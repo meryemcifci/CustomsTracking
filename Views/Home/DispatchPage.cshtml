@@ -17,14 +17,14 @@
             <input class="form-control" asp-for="Plate" />
         </div>
 
-        <div>
+       <div>
             <label>X-Ray Bilgisi:</label>
             <input class="form-control" asp-for="XrayStatus" />
-        </div> 
+        </div>  
 
         <div>
             <label>Sevk Nedeni:</label>
-            <select asp-for="XrayStatus" class="form-control" asp-items="ViewBag.DispatchReasons">
+            <select asp-for="DispatchReasonId" class="form-control" asp-items="ViewBag.DispatchReasons">
                 <option value="">-- Seçiniz --</option>
             </select>
         </div>

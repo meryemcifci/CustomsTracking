@@ -6,16 +6,24 @@
 .navbar-brand img {
     height: 50px;
 }
-.text-dark{
-    color:fff;
+
+#navbar-collapse {
+    color: azure !important;
 }
 .nav-link {
-    color: azure;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 20px;
 }
+
+#theme-toggle {
+    background-color: #222d56; 
+    color: #f1f1f1; 
+    border: none;
+    margin-left: 20px; 
+}
+
 
 .navbar-nav {
     margin-left: auto;

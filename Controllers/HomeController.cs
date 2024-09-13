@@ -36,7 +36,9 @@ namespace CustomsTracking_.Controllers
             if (existingEntry != null)
             {
                 ModelState.AddModelError("Plate", "Bu plakaya sahip bir araç zaten kayıtlı.");
-                return View(model);
+                return RedirectToAction("RegistrationPage", new { plate = model.Plate });
+
+              
             }
 
             _context.LoginPages.Add(model);
@@ -44,6 +46,7 @@ namespace CustomsTracking_.Controllers
 
             return View("LoginPage", model);
         }
+
         public IActionResult LoginList()
         {
             return View(_context.LoginPages);
@@ -134,14 +137,13 @@ namespace CustomsTracking_.Controllers
                     Plate = existingEntry.Plate,
                     XrayStatus = model.XrayStatus,
                     DispatchReasonId = model.DispatchReasonId,
-                    TransactionDate = model.TransactionDate,
-                
+                    TransactionDate = model.TransactionDate
+
                 };
 
                 _context.DispatchPages.Add(dispatch);
                 _context.SaveChanges();
 
-             
                 return RedirectToAction("ExitPage", new { plate = dispatch.Plate });
             }
 
@@ -168,18 +170,18 @@ namespace CustomsTracking_.Controllers
                 var exit = new ExitPage
                 {
                     Plate = existingEntry.Plate,
-                
+                    TransactionDate = model.TransactionDate
                 };
 
                 _context.ExitPages.Add(exit);
-                _context.LoginPages.Remove(existingEntry);
                 _context.SaveChanges();
 
-                return RedirectToAction("SuccessPage");
+
+                _context.LoginPages.Remove(existingEntry);
+               
             }
 
-            ModelState.AddModelError("Plate", "Bu plakaya sahip bir kayıt bulunamadı.");
-            return View(model);
+            return RedirectToAction("LoginPage", new { plate = model.Plate });
 
         }
     }
