@@ -18,6 +18,7 @@ namespace CustomsTracking_.Controllers
 
         public IActionResult Index(string xrayFilter,string driverNameFilter, DateTime TransactionFilter, string VehicleTypeFilter)
         {
+            //Filtreleme işlemi yapılması gerekiyor . Repositories klasörünü filtreleme için açtım(?)
             
             return View();
 
@@ -36,15 +37,16 @@ namespace CustomsTracking_.Controllers
             if (existingEntry != null)
             {
                 ModelState.AddModelError("Plate", "Bu plakaya sahip bir araç zaten kayıtlı.");
-                return RedirectToAction("RegistrationPage", new { plate = model.Plate });
+                return View("LoginPage", model);
 
-              
+
             }
 
             _context.LoginPages.Add(model);
             _context.SaveChanges();
 
-            return View("LoginPage", model);
+            return RedirectToAction("RegistrationPage", new { plate = model.Plate });
+
         }
 
         public IActionResult LoginList()
@@ -97,7 +99,7 @@ namespace CustomsTracking_.Controllers
             ModelState.AddModelError("Plate", "Bu plakaya sahip bir kayıt bulunamadı.");
 
             ViewBag.VehicleTypes = new SelectList(_context.VehicleTypes, "Id", "VehicleTypeName");
-            ViewBag.VehicleBrands = new SelectList(_context.VehicleBrands, "Id", "BrandName");
+            ViewBag.VehicleBrands = new SelectList(_context.VehicleBrands, "Id", "BrandName");     
             ViewBag.VehicleModels = new SelectList(_context.VehicleModels, "Id", "ModelName");
             return View(model);
         }
